@@ -1,0 +1,28 @@
+Test Case 1: Put Author
+ [API]------------------>PUT/https://fakerestapi.azurewebsites.net/api/v1/Authors/11
+ [ Traget URL] --------->https://fakerestapi.azurewebsites.net/api/v1/Authors/11
+ [Test Case ]-----------> Search By Valid BookId
+ [Expected Result]------> 200 OK
+ [Actual Result]---------> 200 OK
+ [Status]----------------->Pass 
+
+
+REQ :
+
+ {
+        "id": 1,
+        "idBook": 1,
+        "firstName": "First Name 11111111111",
+        "lastName": "Last Name 111111111111"
+    }
+
+
+RES:
+
+
+ {
+        "id": 1,
+        "idBook": 1,
+        "firstName": "First Name 11111111111",
+        "lastName": "Last Name 111111111111"
+    }

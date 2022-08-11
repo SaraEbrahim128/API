@@ -1,0 +1,110 @@
+Test Case 1: Search By Valid BookId
+ [API]------------------> Get/https://fakerestapi.azurewebsites.net/api/v1/Authors/authors/books/1
+ [ Traget URL] --------->https://fakerestapi.azurewebsites.net/api/v1/Authors/authors/books/1
+ [Test Case ]-----------> Search By Valid BookId
+ [Expected Result]------> 200 OK
+ [Actual Result]---------> 200 OK
+ [Status]----------------->Pass 
+
+
+RES :
+[
+    {
+        "id": 1,
+        "idBook": 1,
+        "firstName": "First Name 1",
+        "lastName": "Last Name 1"
+    },
+    {
+        "id": 2,
+        "idBook": 1,
+        "firstName": "First Name 2",
+        "lastName": "Last Name 2"
+    },
+    {
+        "id": 3,
+        "idBook": 1,
+        "firstName": "First Name 3",
+        "lastName": "Last Name 3"
+    },
+    {
+        "id": 4,
+        "idBook": 1,
+        "firstName": "First Name 4",
+        "lastName": "Last Name 4"
+    }
+]
+
+
+
+
+
+Test Case 2: Search By Invalid BookId
+ [API]------------------> Get/https://fakerestapi.azurewebsites.net/api/v1/Authors/authors/books/,m,k
+ [ Traget URL] --------->https://fakerestapi.azurewebsites.net/api/v1/Authors/authors/books/,m,k
+ [Test Case ]-----------> Search By Invalid BookId
+ [Expected Result]------> 400 Bad Req
+ [Actual Result]---------> 400 Bad Req
+ [Status]----------------->Pass 
+
+RES :
+
+{
+    "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+    "title": "One or more validation errors occurred.",
+    "status": 400,
+    "traceId": "00-1b978b9c4317e64bb5c3116c076f538d-ba61323d6d15a64f-00",
+    "errors": {
+        "idBook": [
+            "The value ',m,k' is not valid."
+        ]
+    }
+}
+
+
+Test Case 3: Search By Empty BookId
+ [API]------------------> Get/https://fakerestapi.azurewebsites.net/api/v1/Authors/authors/books
+ [ Traget URL] --------->https://fakerestapi.azurewebsites.net/api/v1/Authors/authors/books
+ [Test Case ]-----------> Search By Empty BookId
+ [Expected Result]------> 404 noy fount
+ [Actual Result]---------> 404 not found 
+ [Status]----------------->Pass 
+
+
+
+
+
+Test Case 4: Search By BookId = 0 then any int number  
+ [API]------------------> Get/https://fakerestapi.azurewebsites.net/api/v1/Authors/authors/books/09
+ [ Traget URL] --------->https://fakerestapi.azurewebsites.net/api/v1/Authors/authors/books/09
+ [Test Case ]-----------> Search By BookId = 0 then any int number  
+ [Expected Result]------> 200 OK
+ [Actual Result]---------> 200 OK
+ [Status]----------------->Pass 
+
+
+RES :
+[
+    {
+        "id": 26,
+        "idBook": 9,
+        "firstName": "First Name 26",
+        "lastName": "Last Name 26"
+    },
+    {
+        "id": 27,
+        "idBook": 9,
+        "firstName": "First Name 27",
+        "lastName": "Last Name 27"
+    },
+    {
+        "id": 28,
+        "idBook": 9,
+        "firstName": "First Name 28",
+        "lastName": "Last Name 28"
+    }
+]
+
+
+
+
